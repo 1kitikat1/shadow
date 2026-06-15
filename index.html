@@ -246,7 +246,6 @@
         <p class="hero-subtitle">Мы предлагаем вам продвинутый игровой клиент с оптимизацией FPS, встроенными модами и уникальным дизайном, который обеспечит максимальное удовольствие от геймплея.</p>
         
         <div class="btn-container">
-            <!-- Укажите вместо # название файла, если загрузите его на GitHub, например launcher.exe -->
             <a href="#" class="btn btn-primary">Скачать клиент</a>
             <a href="https://t.me" target="_blank" class="btn btn-secondary">Telegram канал</a>
         </div>
@@ -279,17 +278,18 @@
 
     <script>
         function showSection(sectionId) {
-            // Скрываем все секции
-            document.querySelectorAll('.content-section').forEach(sec => {
+            document.querySelectorAll('.content-section').forEach(function(sec) {
                 sec.classList.remove('active');
             });
-            // Убираем активный класс у кнопок в меню
-            document.querySelectorAll('nav button').forEach(btn => {
+            document.querySelectorAll('nav button').forEach(function(btn) {
                 btn.classList.remove('active');
             });
 
-            // Показываем нужную секцию и подсвечиваем кнопку
             document.getElementById('sec-' + sectionId).classList.add('active');
-const navBtn = document.getElementById('nav-' + sectionId);
+            var navBtn = document.getElementById('nav-' + sectionId);
             if(navBtn) navBtn.classList.add('active');
         }
+    </script>
+
+</body>
+</html>
