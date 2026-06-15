@@ -3,15 +3,230 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow Craft</title>
+    <title>Shadow Craft — Лучший клиент Minecraft</title>
     <style>
-        body { font-family: sans-serif; background: #1e1e24; color: #fff; text-align: center; padding-top: 50px; }
-        .btn { display: inline-block; background: #55ff55; color: #000; padding: 15px 30px; font-weight: bold; text-decoration: none; border-radius: 8px; margin-top: 20px; }
+        /* Сброс стилей и плавный скролл */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at center, #1a0b2e 0%, #0a0512 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Анимированный задний фон с эффектом свечения */
+        body::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(138, 43, 226, 0.15);
+            border-radius: 50%;
+            filter: blur(120px);
+            top: -10%;
+            right: -10%;
+            z-index: 0;
+            animation: pulse 8s infinite alternate;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(75, 0, 130, 0.12);
+            border-radius: 50%;
+            filter: blur(100px);
+            bottom: -10%;
+            left: -10%;
+            z-index: 0;
+            animation: pulse 10s infinite alternate-reverse;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1) translate(0, 0); }
+            100% { transform: scale(1.2) translate(30px, 20px); }
+        }
+
+        /* Навигационная панель (Шапка) */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            position: relative;
+            z-index: 10;
+            background: rgba(10, 5, 18, 0.6);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+        }
+
+        .logo span {
+            color: #a855f7;
+        }
+
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
+        }
+
+        /* Главный контент */
+        main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .hero-title {
+            font-size: 54px;
+            font-weight: 800;
+            line-height: 1.2;
+            max-width: 800px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 0px 30px rgba(168, 85, 247, 0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 18px;
+            color: #94a3b8;
+            max-width: 600px;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* Блок с анимированными кнопками */
+        .btn-container {
+            display: flex;
+            gap: 20px;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 36px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        /* Фиолетовая кнопка скачивания */
+        .btn-primary {
+            background: #a855f7;
+            color: #ffffff;
+            box-shadow: 0 8px 24px rgba(168, 85, 247, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: #b566ff;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
+        }
+
+        /* Темная кнопка Discord */
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(168, 85, 247, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Анимация появления текста */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            header { padding: 20px 5%; }
+            nav { display: none; } /* Скрываем ссылки меню на мобилках для простоты */
+            .hero-title { font-size: 36px; }
+            .hero-subtitle { font-size: 15px; }
+            .btn-container { flex-direction: column; width: 100%; max-width: 300px; }
+            .btn { width: 100%; }
+        }
     </style>
 </head>
 <body>
-    <h1>Shadow Craft</h1>
-    <p>Официальный сайт лаунчера Minecraft</p>
-    <a href="#" class="btn">Скачать лаунчер</a>
+
+    <header>
+        <div class="logo">Shadow<span>Craft</span></div>
+        <nav>
+            <a href="#">Главная</a>
+            <a href="#">Правила</a>
+            <a href="#">О клиенте</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="hero-title">Лучший клиент для <span>комфортной игры</span> в Minecraft</h1>
+        <p class="hero-subtitle">Мы предлагаем вам продвинутый игровой клиент с оптимизацией FPS, встроенными модами и уникальным дизайном, который обеспечит максимальное удовольствие от геймплея.</p>
+        
+        <div class="btn-container">
+            <!-- Сюда в href вставьте имя файла лаунчера, когда загрузите его -->
+            <a href="#" class="btn btn-primary">Скачать клиент</a>
+            <!-- Сюда в href вставьте ссылку на ваш Discord сервер -->
+            <a href="https://discord.gg" target="_blank" class="btn btn-secondary">Discord сервер</a>
+        </div>
+    </main>
+
 </body>
 </html>
