@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shadow Craft — Лучший клиент Minecraft</title>
+    <title>shadow — Лучший клиент Minecraft</title>
     <style>
-        /* Сброс стилей и плавный скролл */
         * {
             margin: 0;
             padding: 0;
@@ -23,7 +22,7 @@
             position: relative;
         }
 
-        /* Анимированный задний фон с эффектом свечения */
+        /* Задний фон с эффектом свечения */
         body::before {
             content: '';
             position: absolute;
@@ -57,7 +56,7 @@
             100% { transform: scale(1.2) translate(30px, 20px); }
         }
 
-        /* Навигационная панель (Шапка) */
+        /* Навигационная панель */
         header {
             display: flex;
             justify-content: space-between;
@@ -71,58 +70,61 @@
         }
 
         .logo {
-            font-size: 24px;
+            font-size: 26px;
             font-weight: 800;
             letter-spacing: 1px;
             color: #ffffff;
             text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+            cursor: pointer;
         }
 
-        .logo span {
-            color: #a855f7;
-        }
-
-        nav a {
+        nav button {
+            background: none;
+            border: none;
             color: #94a3b8;
-            text-decoration: none;
             margin-left: 30px;
             font-size: 15px;
             font-weight: 500;
+            cursor: pointer;
             transition: 0.3s ease;
         }
 
-        nav a:hover {
+        nav button:hover, nav button.active {
             color: #ffffff;
             text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
         }
 
-        /* Главный контент */
-        main {
+        /* Стили секций контента */
+        .content-section {
+            display: none;
             flex: 1;
-            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 40px 20px;
+            padding: 60px 20px;
             position: relative;
             z-index: 10;
+            animation: fadeIn 0.5s ease forwards;
         }
 
+        .content-section.active {
+            display: flex;
+        }
+
+        /* Главная страница */
         .hero-title {
             font-size: 54px;
             font-weight: 800;
             line-height: 1.2;
             max-width: 800px;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
         }
 
         .hero-title span {
             background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            text-shadow: 0px 0px 30px rgba(168, 85, 247, 0.2);
         }
 
         .hero-subtitle {
@@ -131,14 +133,11 @@
             max-width: 600px;
             line-height: 1.6;
             margin-bottom: 40px;
-            animation: fadeInUp 1.2s ease;
         }
 
-        /* Блок с анимированными кнопками */
         .btn-container {
             display: flex;
             gap: 20px;
-            animation: fadeInUp 1.4s ease;
         }
 
         .btn {
@@ -151,10 +150,8 @@
             text-decoration: none;
             border-radius: 12px;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
         }
 
-        /* Фиолетовая кнопка скачивания */
         .btn-primary {
             background: #a855f7;
             color: #ffffff;
@@ -167,39 +164,66 @@
             box-shadow: 0 12px 30px rgba(168, 85, 247, 0.6);
         }
 
-        /* Темная кнопка Discord */
         .btn-secondary {
             background: rgba(255, 255, 255, 0.05);
             color: #ffffff;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
         }
 
         .btn-secondary:hover {
             background: rgba(255, 255, 255, 0.1);
             border-color: rgba(168, 85, 247, 0.5);
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
         }
 
-        /* Анимация появления текста */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Текстовые блоки для О Клиенте и Правил */
+        .info-card {
+            background: rgba(20, 10, 35, 0.6);
+            border: 1px solid rgba(168, 85, 247, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            max-width: 700px;
+            text-align: left;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        /* Адаптивность для мобильных устройств */
+        .info-card h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #c084fc;
+        }
+
+        .info-card p {
+            color: #cbd5e1;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .info-card ol {
+            padding-left: 20px;
+            color: #cbd5e1;
+        }
+
+        .info-card li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+
+        .info-card li strong {
+            color: #ffffff;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         @media (max-width: 768px) {
-            header { padding: 20px 5%; }
-            nav { display: none; } /* Скрываем ссылки меню на мобилках для простоты */
-            .hero-title { font-size: 36px; }
-            .hero-subtitle { font-size: 15px; }
+            header { padding: 20px 5%; flex-direction: column; gap: 15px; }
+            nav button { margin: 0 10px; }
+            .hero-title { font-size: 34px; }
             .btn-container { flex-direction: column; width: 100%; max-width: 300px; }
             .btn { width: 100%; }
         }
@@ -208,25 +232,64 @@
 <body>
 
     <header>
-        <div class="logo">Shadow<span>Craft</span></div>
+        <div class="logo" onclick="showSection('main')">shadow</div>
         <nav>
-            <a href="#">Главная</a>
-            <a href="#">Правила</a>
-            <a href="#">О клиенте</a>
+            <button id="nav-main" class="active" onclick="showSection('main')">Главная</button>
+            <button id="nav-about" onclick="showSection('about')">О клиенте</button>
+            <button id="nav-rules" onclick="showSection('rules')">Правила</button>
         </nav>
     </header>
 
-    <main>
+    <!-- ГЛАВНАЯ СТРАНИЦА -->
+    <main id="sec-main" class="content-section active">
         <h1 class="hero-title">Лучший клиент для <span>комфортной игры</span> в Minecraft</h1>
         <p class="hero-subtitle">Мы предлагаем вам продвинутый игровой клиент с оптимизацией FPS, встроенными модами и уникальным дизайном, который обеспечит максимальное удовольствие от геймплея.</p>
         
         <div class="btn-container">
-            <!-- Сюда в href вставьте имя файла лаунчера, когда загрузите его -->
+            <!-- Укажите вместо # название файла, если загрузите его на GitHub, например launcher.exe -->
             <a href="#" class="btn btn-primary">Скачать клиент</a>
-            <!-- Сюда в href вставьте ссылку на ваш Discord сервер -->
-            <a href="https://discord.gg" target="_blank" class="btn btn-secondary">Discord сервер</a>
+            <a href="https://t.me" target="_blank" class="btn btn-secondary">Telegram канал</a>
         </div>
     </main>
 
-</body>
-</html>
+    <!-- СТРАНИЦА О КЛИЕНТЕ -->
+    <section id="sec-about" class="content-section">
+        <div class="info-card">
+            <h2>О нашем клиенте</h2>
+            <p><strong>shadow</strong> — это современный лаунчер и игровой клиент, разработанный специально для игроков, ценящих плавность картинки и удобство управления.</p>
+            <p>⚡ <strong>Максимальный FPS:</strong> Благодаря встроенным модам оптимизации (Sodium/Lithium) и глубокой настройке графического движка, ваш FPS вырастет до двух раз.</p>
+            <p>🛡️ <strong>Надежная защита:</strong> Собственный встроенный античит предотвращает использование стороннего софта, гарантируя честную и комфортную игру для всех.</p>
+            <p>🎨 <strong>Кастомизация:</strong> Изменяйте интерфейс под себя, используйте встроенные красивые плащи и кастомные косметические элементы абсолютно бесплатно.</p>
+        </div>
+    </section>
+
+    <!-- СТРАНИЦА ПРАВИЛА -->
+    <section id="sec-rules" class="content-section">
+        <div class="info-card">
+            <h2>Правила проекта</h2>
+            <p>Заходя на сервер через наш клиент, вы автоматически соглашаетесь со следующими правилами сообщества:</p>
+            <ol>
+                <li><strong>Честная игра.</strong> Использование любых сторонних чит-программ, макросов или багов игры, дающих преимущество, строго запрещено.</li>
+                <li><strong>Уважение.</strong> Запрещены оскорбления игроков, администрации, разжигание ненависти, спам и флуд в игровых или текстовых чатах.</li>
+                <li><strong>Безопасность.</strong> Запрещена передача или продажа своего игрового аккаунта третьим лицам. Защищайте свои данные.</li>
+                <li><strong>Коммерция.</strong> Запрещена реклама сторонних проектов, серверов, сайтов или несогласованная коммерческая деятельность.</li>
+            </ol>
+        </div>
+    </section>
+
+    <script>
+        function showSection(sectionId) {
+            // Скрываем все секции
+            document.querySelectorAll('.content-section').forEach(sec => {
+                sec.classList.remove('active');
+            });
+            // Убираем активный класс у кнопок в меню
+            document.querySelectorAll('nav button').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Показываем нужную секцию и подсвечиваем кнопку
+            document.getElementById('sec-' + sectionId).classList.add('active');
+const navBtn = document.getElementById('nav-' + sectionId);
+            if(navBtn) navBtn.classList.add('active');
+        }
