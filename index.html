@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-   <meta charset="UTF-8">
-   <meta name="partner-verification" content="793uzp0dlql7zvrd" />
-<meta name="yandex-verification" content="15de17c87fe62416" />
-<meta name="google-site-verification" content="oTWOyp9_luVFoeuG1RlSSGH8b5B5T8CHB6sRn3SlSdc" />
-
+    <meta charset="UTF-8">
+    <meta name="yandex-verification" content="15de17c87fe62416" />
+    <meta name="google-site-verification" content="oTWOyp9_luVFoeuG1RlSSGH8b5B5T8CHB6sRn3SlSdc" />
     <meta name="description" content="Скачать бесплатный чит-клиент shadow для Майнкрафт. Мощные обходы античитов Grim, Matrix, Vulcan, высокий FPS и красивый GUI.">
     <meta name="keywords" content="shadow, чит клиент майнкрафт, скачать чит майнкрафт, shadow клиент, котук клиент, kotukclient, hvh minecraft">
 
@@ -28,7 +26,6 @@
             position: relative;
         }
 
-        /* Задний фон с эффектом свечения */
         body::before {
             content: '';
             position: absolute;
@@ -62,8 +59,6 @@
             100% { transform: scale(1.2) translate(30px, 20px); }
         }
 
-
-        /* Навигационная панель */
         header {
             display: flex;
             justify-content: space-between;
@@ -101,17 +96,28 @@
             text-shadow: 0 0 8px rgba(168, 85, 247, 0.6);
         }
 
-        /* Стили секций контента */
-        .content-section {
-            display: none;
+        .page-container {
             flex: 1;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
+            display: flex;
+            max-width: 1300px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 40px 8%;
+            gap: 50px;
+            align-items: flex-start;
             position: relative;
             z-index: 10;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-section {
+            display: none;
+            flex-direction: column;
             animation: fadeIn 0.5s ease forwards;
         }
 
@@ -119,13 +125,12 @@
             display: flex;
         }
 
-        /* Главная страница */
         .hero-title {
             font-size: 54px;
             font-weight: 800;
             line-height: 1.2;
-            max-width: 800px;
             margin-bottom: 20px;
+            text-align: left;
         }
 
         .hero-title span {
@@ -137,14 +142,16 @@
         .hero-subtitle {
             font-size: 18px;
             color: #94a3b8;
-            max-width: 600px;
             line-height: 1.6;
             margin-bottom: 40px;
+            text-align: left;
+            max-width: 650px;
         }
 
         .btn-container {
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -183,16 +190,14 @@
             transform: translateY(-4px);
         }
 
-        /* Текстовые блоки для О Клиенте и Правил */
         .info-card {
             background: rgba(20, 10, 35, 0.6);
             border: 1px solid rgba(168, 85, 247, 0.2);
             padding: 40px;
             border-radius: 20px;
-            max-width: 700px;
-            text-align: left;
             backdrop-filter: blur(10px);
             box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            width: 100%;
         }
 
         .info-card h2 {
@@ -222,17 +227,116 @@
             color: #ffffff;
         }
 
+        .ad-banner {
+            min-width: 280px;
+            max-width: 300px;
+            background: linear-gradient(145deg, rgba(30, 15, 50, 0.8), rgba(15, 8, 28, 0.9));
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            border-radius: 20px;
+            padding: 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(168, 85, 247, 0.1);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .ad-badge {
+            position: absolute;
+            top: 10px;
+            right: 12px;
+            font-size: 9px;
+            color: rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .ad-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .ad-promo-text {
+            font-size: 20px;
+            font-weight: 800;
+            background: linear-gradient(90deg, #ffdd00, #ffaa00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .ad-qr-image {
+            width: 170px;
+            height: 170px;
+            background: #ffffff;
+            padding: 8px;
+            border-radius: 12px;
+            margin: 0 auto 15px auto;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+            display: block;
+        }
+
+        .ad-instruction {
+            font-size: 13px;
+            color: #94a3b8;
+            line-height: 1.4;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
+        .feature-item h3 {
+            color: #c084fc;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature-item p {
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             header { padding: 20px 5%; flex-direction: column; gap: 15px; }
             nav button { margin: 0 10px; }
-            .hero-title { font-size: 34px; }
-            .btn-container { flex-direction: column; width: 100%; max-width: 300px; }
+            .page-container { flex-direction: column; padding: 30px 5%; gap: 40px; align-items: center; }
+            .hero-title { font-size: 36px; text-align: center; }
+            .hero-subtitle { font-size: 15px; text-align: center; margin-bottom: 30px; max-width: 100%; }
+            .btn-container { flex-direction: column; width: 100%; max-width: 300px; margin: 0 auto; }
             .btn { width: 100%; }
+            .ad-banner { width: 100%; max-width: 340px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .info-card { padding: 25px; }
+            .info-card h2 { font-size: 26px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-title { font-size: 28px; }
+            .btn { padding: 14px 24px; font-size: 14px; }
+            .ad-qr-image { width: 130px; height: 130px; }
+            header { padding: 15px 4%; }
+            nav button { font-size: 13px; margin: 0 8px; }
         }
     </style>
 </head>
@@ -247,42 +351,73 @@
         </nav>
     </header>
 
-    <!-- ГЛАВНАЯ СТРАНИЦА -->
-    <main id="sec-main" class="content-section active">
-        <h1 class="hero-title">Лучший чит-клиент для <span>простой игры</span> в Minecraft</h1>
-        <p class="hero-subtitle">Мы предлагаем продвинутый софт с мощными обходами античитов, кастомными визуалами и идеальной оптимизацией. Уничтожай врагов на любых серверах с комфортом.</p>
+    <div class="page-container">
         
-        <div class="btn-container">
-            <a href="https://disk.yandex.ru/d/SJfgwxQ8F3KSkA" class="btn btn-primary">Скачать клиент</a>
+        <div class="main-content">
+            
+            <!-- ГЛАВНАЯ -->
+            <div id="sec-main" class="content-section active">
+                <h1 class="hero-title">Лучший чит-клиент для <span>простой игры</span> in Minecraft</h1>
+                <p class="hero-subtitle">Мы предлагаем продвинутый софт с мощными обходами античитов, кастомными визуалами и идеальной оптимизацией. Уничтожай врагов на любых серверах с комфортом.</p>
+                <div class="btn-container">
+                    <a href="#" class="btn btn-primary">Скачать клиент</a>
+                    <a href="#" class="btn btn-secondary">Telegram канал</a>
+                </div>
+            </div>
 
-            <a href="https://t.me/kotukclient" target="_blank" class="btn btn-secondary">Telegram канал</a>
-        </div>
-    </main>
+            <!-- О КЛИЕНТЕ -->
+            <div id="sec-about" class="content-section">
+                <div class="info-card">
+                    <h2>О нашем чит-клиенте</h2>
+                    <p><strong>shadow</strong> — это премиальный софт, созданный для игроков, которые хотят получить полное превосходство на серверах Майнкрафт, не платя за это деньги.</p>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <h3>🔥 Топовые обходы</h3>
+                            <p>Наши функции регулярно обновляются и тестируются под самые популярные античиты (GrimAC, Polar, Matrix), минимизируя риск блокировки.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>⚡ Стабильный FPS</h3>
+                            <p>Оптимизированное ядро и чистый код гарантируют полное отсутствие просадок и лагов даже во время жесткого ХВХ.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>🎨 Кастомные визуалы</h3>
+                            <p>Красивый и отзывчивый GUI-интерфейс, детальная настройка ESP, Chams, HUD и кастомных шрифтов под ваш вкус.</p>
+                        </div>
+                        <div class="feature-item">
+                            <h3>🛡️ Бесплатность</h3>
+                            <p>Весь функционал доступен абсолютно бесплатно без скрытых платежей и донатов. Просто скачай и играй.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-    <!-- СТРАНИЦА О КЛИЕНТЕ -->
-    <section id="sec-about" class="content-section">
-        <div class="info-card">
-            <h2>О нашем чит-клиенте</h2>
-            <p><strong>shadow</strong> — это премиальный софт, созданный для игроков, которые хотят получить полное превосходство на серверах Майнкрафт,не платив за это деньги.</p>
-            <p>🔥 <strong>Топовые обходы (Bypasses):</strong> Наши функции регулярно обновляются и тестируются под самые популярные античиты (GrimAC, Polar, Matrix), минимизируя риск блокировки.</p>
-            <p>⚡ <strong>Стабильный FPS:</strong> Оптимизированное ядро и чистый код гарантируют полное отсутствие просадок и лагов даже во время жесткого ХВХ (HvH).</p>
-            <p>🎨 <strong>Кастомные визуалы:</strong> Красивый и отзывчивый GUI-интерфейс, детальная настройка ESP, Chams, HUD и кастомных шрифтов под ваш вкус.</p>
-        </div>
-    </section>
+            <!-- ПРАВИЛА -->
+            <div id="sec-rules" class="content-section">
+                <div class="info-card">
+                    <h2>Правила использования</h2>
+                    <p>Используя софт <strong>shadow</strong>, вы принимаете ключевые правила и рекомендации нашего сообщества:</p>
+                    <ol>
+                        <li><strong>Безопасность аккаунтов.</strong> Администрация проекта не несёт ответственности за ваши игровые аккаунты. Используйте надёжные прокси/VPN и твинки.</li>
+                        <li><strong>Уважение в медиа.</strong> При публикации медиа-контента (нарезки, стримы) с нашим клиентом, указывайте ссылку на наш Telegram-канал.</li>
+                        <li><strong>Запрет на слив.</strong> Запрещается ковырять код, пытаться декомпилировать билд нашего клиента.</li>
+                        <li><strong>Обновления.</strong> Всегда скачивайте актуальные конфиги и версии только из официального Telegram-канала или нашего сайта во избежание детектов.</li>
+                    </ol>
+                </div>
+            </div>
 
-    <!-- СТРАНИЦА ПРАВИЛА -->
-    <section id="sec-rules" class="content-section">
-        <div class="info-card">
-            <h2>Правила использования</h2>
-            <p>Используя софт <strong>shadow</strong>, вы принимаете ключевые правила и рекомендации нашего сообщества:</p>
-            <ol>
-                <li><strong>Безопасность аккаунтов.</strong> Администрация проекта не несёт ответственности за ваши игровые аккаунты. Используйте надежные прокси/VPN и твинки.</li>
-                <li><strong>Уважение в медиа.</strong> При публикации медиа-контента (нарезки, стримы) с нашим клиентом, указывайте ссылку на наш Telegram-канал.</li>
-                <li><strong>Запрет на слив.</strong> Запрещается ковырять код, пытаться декомпилировать билд нашего клиента </li>
-                <li><strong>Обновления.</strong> Всегда скачивайте актуальные конфиги и версии только из официального Telegram-канала или нашего сайта во избежание детектов.</li>
-            </ol>
         </div>
-    </section>
+
+        <!-- ПРАВАЯ КОЛОНКА — РЕКЛАМА -->
+        <aside class="ad-banner">
+            <span class="ad-badge">реклама</span>
+            <div class="ad-title">Акция от Яндекс Браузера</div>
+            <div class="ad-promo-text">До 1100 ₽ на связь!</div>
+            <img class="ad-qr-image" src="#" alt="QR-код Яндекс" />
+            <p class="ad-instruction">Наведи камеру телефона на QR-код, установи приложение и забирай вознаграждение на баланс!</p>
+            <p style="margin-top:8px;font-size:11px;color:#4a4a5a;">793uzp0dlql7zvrdf</p>
+        </aside>
+
+    </div>
 
     <script>
         function showSection(sectionId) {
@@ -292,10 +427,10 @@
             document.querySelectorAll('nav button').forEach(function(btn) {
                 btn.classList.remove('active');
             });
-
-            document.getElementById('sec-' + sectionId).classList.add('active');
+            var target = document.getElementById('sec-' + sectionId);
+            if (target) target.classList.add('active');
             var navBtn = document.getElementById('nav-' + sectionId);
-            if(navBtn) navBtn.classList.add('active');
+            if (navBtn) navBtn.classList.add('active');
         }
     </script>
 
