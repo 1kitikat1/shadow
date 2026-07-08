@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -162,10 +161,11 @@
 
         .build-tabs {
             display: flex;
-            background: #0b0b0c;
+            background: rgba(20, 15, 40, 0.6);
             padding: 5px;
-            border-radius: 10px;
+            border-radius: 12px;
             border: 1px solid rgba(168, 85, 247, 0.2);
+            backdrop-filter: blur(10px);
             gap: 6px;
         }
 
@@ -190,10 +190,10 @@
         }
 
         .tab-btn.active {
-            background: #1e1e22;
+            background: rgba(168, 85, 247, 0.15);
             color: #ffffff;
-            border: 1px solid rgba(168, 85, 247, 0.4);
-            box-shadow: 0 0 10px rgba(168, 85, 247, 0.15);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
         }
 
         .status-dot { font-size: 9px; }
@@ -208,7 +208,7 @@
         }
 
         .version-card {
-            background: rgba(20, 10, 35, 0.4);
+            background: rgba(20, 15, 40, 0.4);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 16px;
             padding: 28px;
@@ -216,17 +216,20 @@
             flex-direction: column;
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.2);
         }
 
         .version-card:hover {
             border-color: rgba(168, 85, 247, 0.3);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 40px rgba(168, 85, 247, 0.1);
         }
 
         .version-card h3 {
             font-size: 22px;
             font-weight: 700;
             margin-bottom: 6px;
+            color: #ffffff;
         }
 
         .version-card .tag {
@@ -235,87 +238,199 @@
             margin-bottom: 20px;
         }
 
+        .file-name {
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 13px;
+            background: rgba(168, 85, 247, 0.08);
+            padding: 2px 12px;
+            border-radius: 4px;
+            color: #c084fc;
+            display: inline-block;
+            margin-top: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(168, 85, 247, 0.1);
+        }
+
         .locked-container {
             background: rgba(255, 152, 0, 0.03);
             border: 1px solid rgba(255, 152, 0, 0.15);
-            padding: 20px;
+            padding: 16px;
             border-radius: 12px;
-            margin: 25px 0;
+            margin: 10px 0 20px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
             text-align: left;
         }
 
-        .lock-icon { font-size: 26px; }
-        .lock-text h4 { color: #FF9800; font-size: 15px; margin-bottom: 4px; }
-        .lock-text p { color: #94a3b8; font-size: 13px; line-height: 1.5; }
+        .lock-icon { font-size: 24px; }
+        .lock-text h4 { color: #FF9800; font-size: 14px; margin-bottom: 3px; }
+        .lock-text p { color: #94a3b8; font-size: 12.5px; line-height: 1.5; }
 
         .btn-container {
             display: flex;
-            gap: 15px;
+            gap: 12px;
             margin-top: auto;
+            flex-wrap: wrap;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 28px;
-            font-size: 15px;
+            padding: 12px 24px;
+            font-size: 14px;
             font-weight: 600;
             text-decoration: none;
             border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
             flex: 1;
+            min-width: 100px;
             border: none;
         }
 
         .btn-primary {
-            background: #a855f7;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.2), rgba(138, 43, 226, 0.1));
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.25);
+            border: 1px solid rgba(168, 85, 247, 0.3);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(168, 85, 247, 0.15);
         }
 
         .btn-primary:hover {
-            background: #b566ff;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.35), rgba(138, 43, 226, 0.2));
+            border-color: rgba(168, 85, 247, 0.5);
             transform: translateY(-2px);
-        }
-
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: #ffffff;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(168, 85, 247, 0.4);
+            box-shadow: 0 8px 30px rgba(168, 85, 247, 0.25);
         }
 
         .btn-disabled {
-            background: #161618 !important;
-            border: 1px solid #222226 !important;
+            background: rgba(30, 30, 35, 0.6) !important;
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
             color: #4a4a50 !important;
             cursor: not-allowed !important;
-        }
-
-        .info-card {
-            background: rgba(20, 10, 35, 0.6);
-            border: 1px solid rgba(168, 85, 247, 0.2);
-            padding: 40px;
-            border-radius: 20px;
+            transform: none !important;
+            box-shadow: none !important;
             backdrop-filter: blur(10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
-            width: 100%;
         }
 
-        .info-card h2 { font-size: 32px; margin-bottom: 25px; color: #c084fc; }
-        .info-card p { color: #cbd5e1; font-size: 16px; line-height: 1.7; margin-bottom: 20px; }
-        .info-card ol { padding-left: 20px; color: #cbd5e1; }
-        .info-card li { margin-bottom: 14px; line-height: 1.6; }
-        .info-card li strong { color: #ffffff; }
+        /* ===== ОТДЕЛЬНАЯ ПАНЕЛЬ ТЕЛЕГРАМ ===== */
+        .telegram-panel {
+            background: rgba(20, 15, 40, 0.4);
+            border: 1px solid rgba(0, 136, 204, 0.15);
+            border-radius: 16px;
+            padding: 20px 28px;
+            backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 15px;
+            flex-wrap: wrap;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .telegram-panel:hover {
+            border-color: rgba(0, 136, 204, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 136, 204, 0.05);
+        }
+
+        .telegram-panel .tg-info {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .telegram-panel .tg-icon {
+            font-size: 28px;
+        }
+
+        .telegram-panel .tg-text h4 {
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .telegram-panel .tg-text p {
+            color: #94a3b8;
+            font-size: 13px;
+        }
+
+        .btn-telegram {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 100, 150, 0.08));
+            color: #ffffff;
+            border: 1px solid rgba(0, 136, 204, 0.25);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 136, 204, 0.05);
+            flex: 0 1 auto;
+            padding: 12px 30px;
+        }
+
+        .btn-telegram:hover {
+            background: linear-gradient(135deg, rgba(0, 136, 204, 0.3), rgba(0, 100, 150, 0.15));
+            border-color: rgba(0, 136, 204, 0.4);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 136, 204, 0.15);
+        }
+
+        /* ===== LIQUID GLASS ИНФО КАРТА ===== */
+        .info-card {
+            background: rgba(20, 15, 40, 0.4);
+            border: 1px solid rgba(168, 85, 247, 0.12);
+            padding: 45px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+
+        .info-card h2 { 
+            font-size: 32px; 
+            margin-bottom: 20px; 
+            color: #ffffff;
+            background: linear-gradient(135deg, #c084fc, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .info-card p { 
+            color: #cbd5e1; 
+            font-size: 16px; 
+            line-height: 1.8; 
+            margin-bottom: 18px;
+        }
+
+        .info-card h3 {
+            color: #c084fc;
+            font-size: 22px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-card ul li {
+            color: #cbd5e1;
+            padding: 8px 0 8px 28px;
+            position: relative;
+            line-height: 1.6;
+            font-size: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .info-card ul li::before {
+            content: '◆';
+            color: #a855f7;
+            position: absolute;
+            left: 0;
+            font-size: 12px;
+        }
 
         .build-content { display: none; }
         .build-content.active-build { display: block; }
@@ -328,7 +443,10 @@
             .page-container { padding: 20px 5%; }
             .build-tabs { flex-wrap: wrap; }
             .tab-btn { padding: 8px 14px; font-size: 12px; }
-            .btn { padding: 12px 18px; font-size: 13px; }
+            .btn { padding: 10px 16px; font-size: 13px; min-width: 80px; }
+            .info-card { padding: 25px; }
+            .telegram-panel { flex-direction: column; align-items: stretch; text-align: center; }
+            .telegram-panel .tg-info { justify-content: center; }
         }
     </style>
 </head>
@@ -372,26 +490,41 @@
                 <div id="build-stable" class="build-content active-build">
                     <div class="version-grid">
                         <div class="version-card">
-                            <h3>Shadow 1.21.11</h3>
-                            <div class="tag">Актуальный базовый билд • Обходы Matrix/Polar</div>
+                            <h3>Shadow 1.21.4</h3>
+                            <div class="tag">Стабильный релиз • Оптимизация FPS</div>
+                            <div class="file-name">shadowold.jar</div>
                             <div class="btn-container">
-                                <a href="#" class="btn btn-primary">Скачать .JAR</a>
+                                <a href="#" class="btn btn-primary">Скачать</a>
                             </div>
                         </div>
                         <div class="version-card">
-                            <h3>Shadow 1.21.4</h3>
-                            <div class="tag">Стабильный релиз • Оптимизация FPS</div>
+                            <h3>Shadow 1.21.11</h3>
+                            <div class="tag">Актуальный базовый билд • Обходы Matrix/Polar</div>
+                            <div class="file-name">shadow.jar</div>
                             <div class="btn-container">
-                                <a href="#" class="btn btn-primary">Скачать .JAR</a>
+                                <a href="#" class="btn btn-primary">Скачать</a>
                             </div>
                         </div>
                         <div class="version-card">
                             <h3>Shadow 1.16.5</h3>
                             <div class="tag">Архивная версия • Ссылка доступна только в ТГК</div>
+                            <div class="file-name">shadow-legacy.jar</div>
                             <div class="btn-container">
                                 <button class="btn btn-disabled">Версия устарела</button>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- ===== ОТДЕЛЬНАЯ ПАНЕЛЬ ТЕЛЕГРАМ ===== -->
+                    <div class="telegram-panel">
+                        <div class="tg-info">
+                            <span class="tg-icon">📱</span>
+                            <div class="tg-text">
+                                <h4>Наш Telegram канал</h4>
+                                <p>Все новости, обновления и поддержка</p>
+                            </div>
+                        </div>
+                        <a href="https://t.me/teamm_shadow" target="_blank" class="btn btn-telegram">Перейти →</a>
                     </div>
                 </div>
 
@@ -400,18 +533,31 @@
                     <div class="version-grid">
                         <div class="version-card">
                             <h3>Shadow 1.21.11 Recode</h3>
-                            <div class="tag">Флагманский билд • Кинематический Grim Predict • Биометрический Neuro</div>
-                            <div class="locked-container" style="margin: 10px 0 20px;">
+                            <div class="tag">Grim Predict и нейро аура — прорыв в обходе новейших патчей</div>
+                            <div class="file-name">shadow-recode.jar</div>
+                            <div class="locked-container">
                                 <span class="lock-icon">⛔</span>
                                 <div class="lock-text">
                                     <h4>Доступ временно ограничен</h4>
-                                    <p>Текущий билд находится на стадии приватного тестирования обходов под новые патчи GrimAC. Пожалуйста, зайдите позже.</p>
+                                    <p>Текущий билд находится на стадии приватного тестирования.</p>
                                 </div>
                             </div>
                             <div class="btn-container">
                                 <button class="btn btn-disabled">Скачивание недоступно</button>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- ===== ОТДЕЛЬНАЯ ПАНЕЛЬ ТЕЛЕГРАМ ===== -->
+                    <div class="telegram-panel">
+                        <div class="tg-info">
+                            <span class="tg-icon">📱</span>
+                            <div class="tg-text">
+                                <h4>Наш Telegram канал</h4>
+                                <p>Все новости, обновления и поддержка</p>
+                            </div>
+                        </div>
+                        <a href="https://t.me/teamm_shadow" target="_blank" class="btn btn-telegram">Перейти →</a>
                     </div>
                 </div>
 
@@ -420,9 +566,34 @@
             <!-- ==================== О КЛИЕНТЕ ==================== -->
             <div id="page-about" class="tab-content">
                 <div class="info-card">
-                    <h2>О нашем чит-клиенте</h2>
-                    <p>Shadow — это премиальный софт для превосходства на серверах Майнкрафт.</p>
-                    <p>Ядро использует передовые алгоритмы симуляции, делая движения незаметными для античитов.</p>
+                    <h2>Хватит быть жертвой!</h2>
+                    
+                    <p>Представляем тебе <strong style="color:#c084fc;">Shadow</strong> — поколение бесшумных обходов. Это не просто чит-клиент, это <strong style="color:#ffffff;">премиальный софт</strong>, созданный для абсолютного доминирования на любых хвх-серверах.</p>
+
+                    <h3>Особенности</h3>
+                    <ul>
+                        <li>В основе Shadow лежат <strong style="color:#c084fc;">передовые алгоритмы симуляции</strong>, которые делают твои движения незаметными для самых мощных античитов.</li>
+                        <li>Забудь о банах и лагах — мы предлагаем <strong style="color:#ffffff;">глубокую оптимизацию</strong> и <strong style="color:#c084fc;">кастомные визуалы</strong>, которые выведут твою игру на новый уровень.</li>
+                    </ul>
+
+                    <h3>Доступные билды</h3>
+                    <ul>
+                        <li><strong style="color:#c084fc;">Shadow 1.21.11</strong> — Актуальный базовый билд с обходами Matrix и Polar.</li>
+                        <li><strong style="color:#c084fc;">Shadow 1.21.4</strong> — Стабильный релиз для максимальной производительности FPS.</li>
+                        <li><strong style="color:#c084fc;">Shadow 1.21.11 Recode</strong> — Grim Predict и нейро аура — прорыв в обходе новейших патчей.</li>
+                    </ul>
+
+                    <!-- ===== ПАНЕЛЬ ТЕЛЕГРАМ ВНУТРИ СТРАНИЦЫ "О КЛИЕНТЕ" ===== -->
+                    <div class="telegram-panel" style="margin-top: 30px;">
+                        <div class="tg-info">
+                            <span class="tg-icon">📱</span>
+                            <div class="tg-text">
+                                <h4>Наш Telegram канал</h4>
+                                <p>Все новости, обновления и поддержка</p>
+                            </div>
+                        </div>
+                        <a href="https://t.me/teamm_shadow" target="_blank" class="btn btn-telegram">Перейти →</a>
+                    </div>
                 </div>
             </div>
 
@@ -431,11 +602,23 @@
                 <div class="info-card">
                     <h2>Правила использования</h2>
                     <p>Используя shadow, вы принимаете правила сообщества:</p>
-                    <ol>
-                        <li><strong>Безопасность.</strong> Администрация не несёт ответственности за игровые аккаунты; используйте прокси.</li>
-                        <li><strong>Медиа.</strong> При публикации контента указывайте ссылку на ТГК.</li>
-                        <li><strong>Источники.</strong> Скачивайте билды только с сайта или официального ТГК.</li>
-                    </ol>
+                    <ul>
+                        <li><strong style="color:#c084fc;">Безопасность.</strong> Администрация не несёт ответственности за игровые аккаунты; используйте прокси.</li>
+                        <li><strong style="color:#c084fc;">Медиа.</strong> При публикации контента указывайте ссылку на ТГК.</li>
+                        <li><strong style="color:#c084fc;">Источники.</strong> Скачивайте билды только с сайта или официального ТГК.</li>
+                    </ul>
+
+                    <!-- ===== ПАНЕЛЬ ТЕЛЕГРАМ ВНУТРИ СТРАНИЦЫ "ПРАВИЛА" ===== -->
+                    <div class="telegram-panel" style="margin-top: 30px;">
+                        <div class="tg-info">
+                            <span class="tg-icon">📱</span>
+                            <div class="tg-text">
+                                <h4>Наш Telegram канал</h4>
+                                <p>Все новости, обновления и поддержка</p>
+                            </div>
+                        </div>
+                        <a href="https://t.me/teamm_shadow" target="_blank" class="btn btn-telegram">Перейти →</a>
+                    </div>
                 </div>
             </div>
 
