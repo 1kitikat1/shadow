@@ -149,10 +149,6 @@ if (register) {
         throw error;
       }
 
-      // Keep the public registered-user counter in sync. The admin panel also
-      // recalculates it from the real users list when it is opened.
-      await runTransaction(ref(db, "stats/registeredCount"), current => Number(current || 0) + 1);
-
       show(text[lang()].created, false);
       location.href = "../dashboard/";
     } catch (error) {

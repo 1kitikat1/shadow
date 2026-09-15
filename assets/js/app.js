@@ -197,7 +197,3 @@ window.nemesisTranslations = translations;
 document.documentElement.classList.add("ready");
 addLanguageToggle();
 translatePage(getLanguage());
-
-// Keep authenticated web sessions visible to the live activity counter.
-import "./presence.js";
-import "./siteStats.js";
