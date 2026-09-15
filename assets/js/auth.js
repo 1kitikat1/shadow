@@ -47,7 +47,7 @@ function firebaseError(code) {
     "auth/weak-password": "Пароль должен содержать минимум 6 символов.",
     "auth/invalid-credential": "Неверный email или пароль.",
     "auth/too-many-requests": "Слишком много попыток. Попробуйте позже.",
-    "PERMISSION_DENIED": "Firebase не разрешил запись в Realtime Database. Проверь Rules."
+    "PERMISSION_DENIED": "Не удалось сохранить данные аккаунта. Проверьте настройки базы данных."
   };
   const en = {
     "auth/email-already-in-use": "This email is already registered.",
@@ -55,7 +55,7 @@ function firebaseError(code) {
     "auth/weak-password": "Password must be at least 6 characters.",
     "auth/invalid-credential": "Incorrect email or password.",
     "auth/too-many-requests": "Too many attempts. Try again later.",
-    "PERMISSION_DENIED": "Firebase denied the Realtime Database write. Check your Rules."
+    "PERMISSION_DENIED": "Could not save account data. Check your database settings."
   };
 
   return (lang() === "en" ? en : ru)[code] || text[lang()].error;

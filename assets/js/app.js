@@ -97,7 +97,7 @@ const translations = {
   "Open client page →": "Открыть страницу клиента →",
   "ACCOUNT ID": "ID АККАУНТА",
   "Loading...": "Загрузка...",
-  "Your unique Firebase user ID.": "Уникальный ID пользователя Firebase.",
+  "Your unique Firebase user ID.": "Уникальный ID пользователя.",
   "Account overview": "Обзор аккаунта",
   "Member since": "Участник с",
   "Dashboard": "Личный кабинет",
