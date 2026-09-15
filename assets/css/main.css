@@ -70,3 +70,15 @@ h1{font-weight:800;text-shadow:0 15px 60px rgba(0,0,0,.35)}.hero h1 em,.split-he
 .cta{padding:34px 38px;margin-top:85px}.cta h2{font-size:32px;letter-spacing:-.045em}.cta p{color:#8d8c98}footer{border-top:1px solid rgba(255,255,255,.06);color:#666672;padding:28px clamp(20px,6vw,92px)}
 .dash-head{padding-bottom:45px}.dash-head h1{font-size:clamp(38px,5vw,66px)}.dash-grid{gap:14px}.dash-card{padding:27px}.pill{border-radius:999px;background:rgba(139,92,246,.11);border:1px solid rgba(139,92,246,.2);color:#c4b5fd;padding:6px 10px}.overview-list{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.018)}.overview-list>div{padding:19px 22px;border-bottom:1px solid var(--line)}.overview-list>div:last-child{border-bottom:0}.overview-list span{color:#777684}
 @media(max-width:760px){.nav{gap:15px}.nav nav{display:none}.nav-actions{gap:8px}.hero{padding-top:105px}.hero-actions{flex-wrap:wrap}.hero-stats{grid-template-columns:repeat(2,1fr)}.hero-stats div:nth-child(2){border-right:0}.hero-stats div{border-bottom:1px solid var(--line)}.split-hero{grid-template-columns:1fr;gap:40px}.product-art{min-height:260px}.page{padding-left:20px;padding-right:20px}.cta{padding:28px}.cta .btn{margin-top:20px}}
+
+.admin-table-wrap{overflow:auto}.admin-table{width:100%;border-collapse:collapse}.admin-table th,.admin-table td{padding:14px 12px;border-bottom:1px solid rgba(255,255,255,.08);text-align:left;white-space:nowrap}.admin-table select{background:#111118;color:inherit;border:1px solid rgba(255,255,255,.12);border-radius:8px;padding:8px 10px}.admin-table .btn{cursor:pointer}.admin-table .btn:disabled{opacity:.5}
+.public-stats{max-width:780px;margin:-15px auto 90px;padding:0 30px;display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);background:rgba(255,255,255,.015)}
+.public-stats div{padding:22px 24px;text-align:center;border-right:1px solid var(--line)}
+.public-stats div:last-child{border-right:0}
+.public-stats b{display:block;font-size:25px;letter-spacing:-.04em}
+.public-stats span{display:block;color:#666672;font-size:9px;letter-spacing:.16em;margin-top:7px}
+.public-stats+.editorial{margin-top:0}
+.visual-bottom b{font-size:11px}
+.visual-bottom i{font-style:normal}
+.admin-active-table{margin-top:22px}
+@media(max-width:760px){.public-stats{grid-template-columns:1fr;margin-bottom:65px}.public-stats div{border-right:0;border-bottom:1px solid var(--line)}.public-stats div:last-child{border-bottom:0}}
