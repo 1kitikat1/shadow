@@ -4,61 +4,70 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nemesis Launcher</title>
-<meta name="description" content="Nemesis Launcher — one place to download and launch your game modifications.">
+<meta name="description" content="Nemesis Launcher — simple desktop launcher for your game builds, versions and mods.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-<div class="noise"></div>
-<div class="orb orb-a"></div><div class="orb orb-b"></div><div class="orb orb-c"></div>
 
-<nav class="nav glass">
+<nav class="nav">
   <a class="brand" href="#">
-    <span class="brand-mark"><span></span><span></span><span></span></span>
+    <img class="brand-icon" src="assets/favicon.svg" alt="">
     <span>NEMESIS</span>
   </a>
   <div class="nav-links">
     <a href="#features">Features</a>
     <a href="#games">Games</a>
+    <a href="#download">Releases</a>
   </div>
-  <a class="nav-download unavailable" href="#download" data-unavailable>Download</a>
+  <a class="btn btn-sm" data-download href="https://github.com/1kitikat1/Launch/releases/latest/download/NemesisSetup.exe">Download</a>
 </nav>
 
 <main>
+
 <section class="hero">
-  <div class="hero-copy">
-    <div class="eyebrow"><i></i> NEMESIS LAUNCHER</div>
-    <h1>Your games.<br><em>Your modifications.</em><br>One launcher.</h1>
-    <p class="lead">A clean desktop launcher built to keep your game modifications, versions and downloads in one place.</p>
-    <div class="hero-actions">
-      <a class="button primary unavailable" href="#download" data-unavailable><span>Download Launcher</span><b>↗</b></a>
-      <a class="button secondary" href="#features">Explore</a>
-    </div>
-    <div class="meta"><span>Windows</span><span>·</span><span>Free</span><span>·</span><span>Nemesis</span></div>
+  <div class="eyebrow"><i></i> NEMESIS LAUNCHER</div>
+  <h1>Your games.<br><em>Your builds.</em><br>One launcher.</h1>
+  <p class="lead">A simple desktop launcher: game builds, versions and mods — downloaded and launched from one place, in one click.</p>
+  <div class="hero-actions">
+    <a class="btn btn-lg" data-download href="https://github.com/1kitikat1/Launch/releases/latest/download/NemesisSetup.exe">Download for Windows <b>↓</b></a>
+    <a class="btn btn-lg ghost" href="#features">Explore</a>
   </div>
-  <div class="hero-visual">
-    <div class="launcher-window glass">
-      <div class="window-top">
-        <div class="traffic"><i></i><i></i><i></i></div>
-        <span>Nemesis Launcher</span><small>LIBRARY</small>
-      </div>
-      <div class="launcher-body">
-        <aside>
-          <div class="mini-logo"><span></span><span></span><span></span></div>
-          <div class="side-item active">Library</div>
-          <div class="side-item">Downloads</div>
-          <div class="side-item">Settings</div>
-        </aside>
-        <div class="library">
-          <div class="library-head"><div><small>YOUR LIBRARY</small><h3>Games</h3></div><div class="status"><i></i> Ready</div></div>
-          <div class="game-card">
-            <div class="game-art minecraft"><div class="pixel"></div></div>
-            <div class="game-info"><span>FABRIC</span><strong>Minecraft</strong><small>Versions & modifications</small></div>
-            <div class="play">▶</div>
-          </div>
-          <div class="game-card muted">
-            <div class="game-art lineage"><div class="line"></div></div>
-            <div class="game-info"><span>COMING SOON</span><strong>Lineage2M</strong><small>Launcher support</small></div>
-          </div>
+  <div class="meta"><span>Windows 10 / 11</span><span class="dot">·</span><span>Free</span><span class="dot">·</span><span class="accent" data-version>v1.1.0</span></div>
+</section>
+
+<section class="showcase">
+  <div class="window">
+    <div class="window-top">
+      <span class="dots"><i></i><i></i><i></i></span>
+      <span class="window-title">Nemesis Launcher</span>
+      <small>LIBRARY</small>
+    </div>
+    <div class="window-body">
+      <aside>
+        <img class="side-icon" src="assets/favicon.svg" alt="">
+        <div class="side-item active">Library</div>
+        <div class="side-item">Downloads</div>
+        <div class="side-item">Settings</div>
+      </aside>
+      <div class="library">
+        <div class="library-head">
+          <div><small>YOUR LIBRARY</small><h3>Games</h3></div>
+          <div class="status"><i></i> Ready</div>
+        </div>
+        <div class="game-card">
+          <div class="game-art art-mc"></div>
+          <div class="game-info"><span>FABRIC · 1.21.11</span><strong>Minecraft Nemesis</strong><small>Versions &amp; modifications</small></div>
+          <div class="play">▶</div>
+        </div>
+        <div class="game-card">
+          <div class="game-art art-sd"></div>
+          <div class="game-info"><span>FABRIC · 1.21.4</span><strong>SystemDLC</strong><small>Mods &amp; resources</small></div>
+          <div class="play">▶</div>
+        </div>
+        <div class="game-card muted">
+          <div class="game-art art-l2"></div>
+          <div class="game-info"><span>COMING SOON</span><strong>Lineage2M</strong><small>Launcher support</small></div>
         </div>
       </div>
     </div>
@@ -66,38 +75,48 @@
 </section>
 
 <section id="features" class="section">
-  <div class="section-title"><span>01</span><div><small>WHY NEMESIS</small><h2>Everything around<br>your modifications.</h2></div></div>
+  <div class="section-title"><span>01</span><div><small>WHY NEMESIS</small><h2>Everything around<br>your builds.</h2></div></div>
   <div class="features">
-    <article class="feature glass"><div class="icon">↓</div><h3>Fast downloads</h3><p>Download the files you need directly from the launcher without searching through folders.</p></article>
-    <article class="feature glass"><div class="icon">▣</div><h3>Game library</h3><p>Keep different games and their versions organized in one clean desktop interface.</p></article>
-    <article class="feature glass"><div class="icon">✦</div><h3>Made for Nemesis</h3><p>A minimal launcher experience with a dark glass interface and smooth transitions.</p></article>
+    <article class="feature"><div class="icon">↓</div><h3>Fast downloads</h3><p>Builds come straight from the launcher — no digging through folders and links.</p></article>
+    <article class="feature"><div class="icon">▣</div><h3>Game library</h3><p>Every game and version lives in its own instance and stays organized.</p></article>
+    <article class="feature"><div class="icon">✦</div><h3>One click</h3><p>Install the launcher once — it keeps itself updated in the background.</p></article>
   </div>
 </section>
 
-<section id="games" class="games section">
+<section id="games" class="section">
   <div class="section-title"><span>02</span><div><small>SUPPORTED GAMES</small><h2>Built around your library.</h2></div></div>
   <div class="game-list">
-    <div class="large-game glass"><div class="game-number">01</div><div><span>FABRIC · 1.21.11</span><h3>Minecraft</h3><p>Download and manage the Nemesis Minecraft client and its required files.</p></div><b>↗</b></div>
-    <div class="large-game glass soon"><div class="game-number">02</div><div><span>LAUNCHER SUPPORT</span><h3>Lineage2M</h3><p>Nemesis launcher support for the standalone game client.</p></div><b>SOON</b></div>
+    <div class="large-game"><div class="game-number">01</div><div><span>FABRIC · 1.21.11</span><h3>Minecraft Nemesis</h3><p>The Nemesis client with its required files, versions and assets.</p></div><b>↗</b></div>
+    <div class="large-game"><div class="game-number">02</div><div><span>FABRIC · 1.21.4</span><h3>SystemDLC</h3><p>The SystemDLC build — mods, resources and game versions in a separate instance.</p></div><b>↗</b></div>
+    <div class="large-game soon"><div class="game-number">03</div><div><span>LAUNCHER SUPPORT</span><h3>Lineage2M</h3><p>Nemesis launcher support for the standalone game client.</p></div><b>SOON</b></div>
   </div>
 </section>
 
-<section id="download" class="download section">
-  <div class="download-card glass">
-    <div>
+<section id="download" class="section">
+  <div class="download-card">
+    <div class="download-copy">
       <small>GET STARTED</small>
       <h2>One launcher.<br>Less friction.</h2>
       <p>Install Nemesis Launcher and manage your supported games from one place.</p>
     </div>
     <div class="download-side">
-      <a class="button primary big unavailable" href="#download" data-unavailable>Download for Windows <b>↓</b></a>
-      <span class="download-status"><i></i> Launcher пока недоступен для скачивания</span>
+      <a class="btn btn-lg" data-download href="https://github.com/1kitikat1/Launch/releases/latest/download/NemesisSetup.exe">Download for Windows <b>↓</b></a>
+      <span class="download-status"><i></i> <span data-version>v1.1.0</span> · one-click installer</span>
+      <div class="dl-links">
+        <a class="dl-alt" data-portable href="https://github.com/1kitikat1/Launch/releases/latest">Portable .zip</a>
+        <a class="dl-alt" href="https://github.com/1kitikat1/Launch/releases/latest">All releases</a>
+      </div>
     </div>
   </div>
 </section>
+
 </main>
 
-<footer><div class="brand"><span class="brand-mark"><span></span><span></span><span></span></span><span>NEMESIS</span></div><span>© 2026 Nemesis. Built for your library.</span></footer>
+<footer>
+  <a class="brand" href="#"><img class="brand-icon" src="assets/favicon.svg" alt=""><span>NEMESIS</span></a>
+  <span>© 2026 Nemesis. Built for your library.</span>
+</footer>
+
 <script src="assets/app.js"></script>
 </body>
 </html>
