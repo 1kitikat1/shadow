@@ -123,6 +123,7 @@ img{display:block}
 .art-mc{background:linear-gradient(145deg,#2f7a4a,#0e2b1c)}
 .art-sd{background:linear-gradient(145deg,#5b34c9,#180f38)}
 .art-rs{background:linear-gradient(145deg,#ff9a3c,#7a2f0a)}
+.art-dm{background:linear-gradient(145deg,#e9eef6,#242a34)}
 .game-text{display:flex;flex-direction:column;gap:5px}
 .game-text span{font-size:10px;letter-spacing:.22em;color:var(--acc-2)}
 .game-text h3{font-family:Unbounded,Manrope,sans-serif;font-weight:700;font-size:21px;margin:2px 0 4px}
